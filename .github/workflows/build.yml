@@ -9,13 +9,15 @@ on:
   pull_request:
 
 jobs:
-  typecheck:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Use Node.js LTS
       uses: actions/setup-node@v4
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
     - name: Install dependencies
       run: pnpm    
     - name: Build
