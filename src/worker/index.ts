@@ -15,6 +15,8 @@ const fetchUserLibrary = (steamName: string): Promise<Item[]> =>
 	fetch(`${apiUrl}/api/${steamName}/library`).then(r => r.json());
 
 const getWishlistPages = async (steamId: string, page = 0): Promise<Item[]> => {
+	// disable wishlist
+	return [];
 	const response = await fetch(
 		`https://store.steampowered.com/wishlist/profiles/${steamId}/wishlistdata/?p=${page}`
 	);
